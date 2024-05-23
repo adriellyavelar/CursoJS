@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imigração</title>
+</head>
+<body>
+    <h1>Verificação de nacionalidade</h1>
+    De qual país você é? <input type="text" name="paísDigitado" id="paísDigitado">
+    <input type="button" value="Verificar" onclick="gravar ()">
+    <div id="res"></div>
+
+    <script>
+        function gravar() {
+            var paísDigitado = document.getElementById('paísDigitado')
+            var res = document.getElementById('res')
+            var país = String(paísDigitado.value).toUpperCase()
+            res.innerHTML = `<p>Vivendo em <strong>${país}</strong>!</p>`
+
+            if (país != 'BRASIL') {
+                res.innerHTML += `<p>Você é <strong>Estrangeiro!</strong></p>`
+            } else {
+                res.innerHTML += `<p>Você é <strong>Brasileiro!</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
